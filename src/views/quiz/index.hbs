@@ -1,0 +1,80 @@
+<div class="container mt-sm-5 my-1">
+      <form action="/result" method="POST">
+ <div class="container">
+        <div class="page-header">
+            <h1>MBTI Test</h1>
+        </div>
+        <ol>
+               
+
+
+               {{#each list}}
+            <li><strong>{{question}}</strong><br>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="{{id}}" value="{{v1}}">
+                      {{a1}}
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio"  name="{{id}}" value="{{v2}}">
+                       {{a2}}
+                    </label>
+                </div>
+            </li>
+    {{/each}}
+     <button class="btn btn-warning pull-right" id="pushquiz" type="submit">Submit
+                                form</button>
+    </form>
+        </ol>
+    
+        <p id="scroll-down" class="hidden text-center">(<i>scroll down</i>)</p>    
+        <p class="text-center"><button id="submit" class="btn btn-primary btn-lg">Calculate Results</button></p>
+    
+        <div id="results" class="text-center hidden">
+            <br><br>
+            <h2 id="type"></h2>
+            <p id="type-details" class="type-description hidden">
+                <strong id="type-title"></strong><br>
+                <strong><span id="type-percentage"></span> of population</strong><br>
+                <span id="type-description"></span><br>
+                <a id="type-site" href="#" target="_blank">Learn more about your type here</a>
+            </p>
+            <p class="pull-left"><span class="badge">E</span> (<span id="eScore"></span>%)</p>
+            <p class="pull-right">(<span id="iScore"></span>%) <span class="badge">I</span></p>
+            <div class="progress">
+                <div id="eiChart" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+                <div class="center-bar"></div>
+            </div>
+            <br class="clearfix">
+            
+            <p class="pull-left"><span class="badge">S</span> (<span id="sScore"></span>%)</p>
+            <p class="pull-right">(<span id="nScore"></span>%) <span class="badge">N</span></p>
+            <div class="progress">
+                <div id="snChart" class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+                <div class="center-bar"></div>
+            </div>
+            <br class="clearfix">
+            
+            <p class="pull-left"><span class="badge">T</span> (<span id="tScore"></span>%)</p>
+            <p class="pull-right">(<span id="fScore"></span>%) <span class="badge">F</span></p>
+            <div class="progress">
+                <div id="tfChart" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+                <div class="center-bar"></div>
+            </div>
+            <br class="clearfix">
+            
+            <p class="pull-left"><span class="badge">J</span> (<span id="jScore"></span>%)</p>
+            <p class="pull-right">(<span id="pScore"></span>%) <span class="badge">P</span></p>
+            <div class="progress">
+                <div id="jpChart" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+                <div class="center-bar"></div>
+            </div>
+            <br class="clearfix">
+        </div>
+    
+    </div>
+    </form>
+    
+</div>

@@ -1,0 +1,13 @@
+[0;1;32m●[0m firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: [0;1;32mactive (running)[0m since Sun 2022-09-18 01:42:53 EDT; 4 days ago
+     Docs: man:firewalld(1)
+ Main PID: 1312 (firewalld)
+    Tasks: 2 (limit: 100765)
+   Memory: 31.4M
+   CGroup: /system.slice/firewalld.service
+           └─1312 /usr/libexec/platform-python -s /usr/sbin/firewalld --nofork --nopid
+
+Sep 18 01:42:52 microservice-02.idm.calbankgh.com systemd[1]: Starting firewalld - dynamic firewall daemon...
+Sep 18 01:42:53 microservice-02.idm.calbankgh.com systemd[1]: Started firewalld - dynamic firewall daemon.
+Sep 18 01:42:53 microservice-02.idm.calbankgh.com firewalld[1312]: [0;1;39m[0;1;31m[0;1;39mWARNING: AllowZoneDrifting is enabled. This is considered an insecure configuration option. It will be removed in a future release. Please consider disabling it now.[0m

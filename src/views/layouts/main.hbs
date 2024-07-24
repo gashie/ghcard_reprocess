@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+	<title>CALBANK</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description" content="CAL DASHBOARD" />
+	<meta name="keywords" content="CAL DASHBOARD">
+	<meta name="author" content="AUTOMATION" />
+
+	<!-- Favicon icon -->
+	    <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
+
+	<!-- fontawesome icon -->
+	<link rel="stylesheet" href="/assets/fonts/fontawesome/css/fontawesome-all.min.css">
+	<!-- animation css -->
+	<link rel="stylesheet" href="/assets/plugins/animation/css/animate.min.css">
+
+
+	<!-- notification css -->
+	<link rel="stylesheet" href="/assets/plugins/notification/css/notification.min.css">
+
+	<!-- vendor css -->
+	<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/custom.css" type="text/css">
+
+  <!-- data tables css -->
+    <link rel="stylesheet" href="/assets/plugins/data-tables/css/datatables.min.css">
+
+</head>
+
+<body class="">
+	<!-- [ Pre-loader ] start -->
+   {{!-- {{>loader}} --}}
+   	    
+	<!-- [ Pre-loader ] End -->
+	<!-- [ navigation menu ] start -->
+      {{>sidebar}}
+	<!-- [ navigation menu ] end -->
+
+	
+
+	<!-- [ Header ] start -->
+     {{>header}}
+	<!-- [ Header ] end -->
+
+	
+
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+	<div class="pcoded-wrapper">
+		<div class="pcoded-content">
+			<div class="pcoded-inner-content">
+				<div class="main-body">
+					<div class="page-wrapper">
+						<!-- [ breadcrumb ] start -->
+					{{>crumbs}}
+						 {{>messages}}
+      {{>errors}}
+						<!-- [ breadcrumb ] end -->
+						<!-- [ Main Content ] start -->
+				       {{{body}}}
+
+						<!-- [ Main Content ] end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- [ Main Content ] end -->
+
+   
+
+    <!-- Required Js -->
+    <script src="/assets/js/vendor-all.min.js"></script>
+    <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/pcoded.min.js"></script>
+
+
+<!-- am chart js -->
+{{!-- <script src="/assets/plugins/chart-am4/js/core.js"></script>
+<script src="/assets/plugins/chart-am4/js/charts.js"></script>
+<script src="/assets/plugins/chart-am4/js/animated.js"></script>
+<script src="/assets/plugins/chart-am4/js/maps.js"></script>
+<script src="/assets/plugins/chart-am4/js/worldLow.js"></script>
+<script src="/assets/plugins/chart-am4/js/continentsLow.js"></script> --}}
+
+
+
+<!-- dashboard-custom js -->
+{{!-- <script src="/assets/js/pages/dashboard-analytics.js"></script> --}}
+
+<!-- sweet alert Js -->
+<script src="/assets/plugins/sweetalert/js/sweetalert.min.js"></script>
+<script src="/assets/js/pages/ac-alert.js"></script>
+<!-- datatable Js -->
+<script src="/assets/plugins/data-tables/js/datatables.min.js"></script>
+<script src="/assets/js/pages/data-basic-custom.js"></script>
+<script src="/assets/apps/tbills/tableSelection.js"></script>
+<script src="/assets/apps/tbills/selectadvice.js"></script>
+<script src="/assets/js/pages/error.js"></script>
+
+
+{{!-- {{>footer}} --}}
+
+</body>
+
+
+
+</html>

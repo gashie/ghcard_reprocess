@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description" content="CAL DASHBOARD" />
+	<meta name="keywords" content="CAL DASHBOARD">
+	<meta name="author" content="AUTOMATION" />
+
+    <!-- Title -->
+    <title>App</title>
+
+    <!-- Favicon -->
+    <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
+
+
+
+    <!--Bootstrap.min css-->
+	<link rel="stylesheet" href="/assets/css/style.css">
+
+
+    <link rel="stylesheet" type="text/css" href="/assets/apps/login/main.css"/>
+
+ <link rel="stylesheet" href="/assets/css/custom.css" type="text/css">
+    <script type="module">
+        document.cookie = "companybrand=#F59037";
+        document.cookie = "company=CALBANK PLC";
+        document.cookie = "companylogo=CALBANK PLC";
+    </script>
+
+    <style>
+        body,
+        html {
+            /* The image used */
+            background-image: url("/assets/images/edisplay.jpg");
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<!-- oncontextmenu="return false" -->
+
+<body class="bg-lighter" oncontextmenu="return false">
+    	     {{>messages}}
+      {{>errors}}
+
+  {{{body}}}
+
+</body>
+
+</html>

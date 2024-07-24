@@ -1,0 +1,191 @@
+<span class="label label-warning">Data Showing from {{firstDate}} to {{lastDate}}</span>
+<hr />
+<div class="row">
+    <div class="col-md-6 col-xl-3">
+        <div class="card card-social">
+            <div class="card-block border-bottom">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-auto">
+                        {{!-- <i class="fab fa-twitter text-c-info f-36"></i> --}}
+                    </div>
+                    <div class="col text-right">
+                        <h3>{{ count}}</h3>
+                        <h5 class="text-c-info mb-0"><span class="text-muted">Total Transaction Count</span></h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card card-social">
+            <div class="card-block border-bottom">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-auto">
+                        {{!-- <i class="fab fa-facebook-f text-primary f-36"></i> --}}
+                        <i class="fab fa-exchange text-primary f-36"></i>
+                    </div>
+                    <div class="col text-right">
+                        <h3>{{fomartprice TransferAmount}}</h3>
+                        <h5 class="text-c-blue mb-0"><span class="text-muted">Total Transfer Amount</span></h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card card-social">
+            <div class="card-block border-bottom">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-auto">
+                        {{!-- <i class="fab fa-twitter text-c-info f-36"></i> --}}
+                    </div>
+                    <div class="col text-right">
+                        <h3>{{fomartprice TaxableAmount}}</h3>
+                        <h5 class="text-c-info mb-0"><span class="text-muted">Total Taxable Amount</span></h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card card-social">
+            <div class="card-block border-bottom">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-auto">
+                        {{!-- <i class="fab fa-google-plus-g text-c-red f-36"></i> --}}
+                    </div>
+                    <div class="col text-right">
+                        <h3>{{fomartprice ElevyAmount}}</h3>
+                        <h5 class="text-c-red mb-0"><span class="text-muted">Total Elevy Amount</span></h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- sessions-section start -->
+    <div class="col-xl-12">
+        <div class="card table-card">
+            <div class="card-header">
+                <h5 style="color: red;">E-Levy Tax Transactions</h5>
+            </div>
+            <div class="card-body px-0 py-0">
+                <div class="dt-responsive table-responsive">
+                    <div class="session-scroll" style="height:600px;position:relative;">
+                        <table id="simpletable" class="table table-striped table-bordered nowrap">
+                            <thead>
+                                <tr>
+                                    <th><span>TransactionDate</span></th>
+                                    <th><span>TransferAmount</span></th>
+                                    <th><span>TaxableAmount </span></th>
+                                    <th><span>ElevyAmount</span></th>
+                                    <th><span>ReceiverAccountNumber</span></th>
+                                    <th><span>SenderAccountNumber</span></th>
+                                    <th><span>SenderPhoneNumber </span></th>
+                                    <th><span>ChannelReference</span></th>
+                                    <th><span>TransactionReference</span></th>
+
+                                    <th><span>Status</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each data}}
+                                <tr>
+                                    <td> {{DateCreated}}</td>
+                                    <td>{{TransferAmount}}</td>
+                                    <td>{{TaxableAmount}}</td>
+                                    <td>{{ElevyAmount}}</td>
+                                    <td>{{ReceiverAccountNumber}}</td>
+                                    <td> {{SenderAccountNumber}}</td>
+                                    <td>{{SenderPhoneNumber}}</td>
+                                    <td>{{ChannelReference}}</td>
+                                    <td>{{TransFT}}</td>
+                                    <td>{{#if Status}}
+                                        <span class="badge badge-success">Success</span>
+                                        {{else}}
+                                        <span class="badge badge-danger">Failed</span>
+                                        {{/if}}
+
+                                    </td>
+                                </tr>
+                                {{/each}}
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll - Vertical table end -->
+        <!-- Scroll - Vertical, Dynamic Height table start -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Scroll - Vertical, Dynamic Height</h5>
+                </div>
+                <div class="card-body">
+                    <div class="dt-responsive table-responsive">
+                        <table id="scr-vtr-dynamic" class="table table-striped table-bordered nowrap">
+                            <thead>
+                                <tr>
+                                    <th><span>TransactionDate</span></th>
+                                    <th><span>TransferAmount</span></th>
+                                    <th><span>TaxableAmount </span></th>
+                                    <th><span>ElevyAmount</span></th>
+                                    <th><span>ReceiverAccountNumber</span></th>
+                                    <th><span>SenderAccountNumber</span></th>
+                                    <th><span>SenderPhoneNumber </span></th>
+                                    <th><span>ChannelReference</span></th>
+                                    <th><span>TransactionReference</span></th>
+
+                                    <th><span>Status</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {{#each data}}
+                                <tr>
+                                    <td> {{DateCreated}}</td>
+                                    <td>{{TransferAmount}}</td>
+                                    <td>{{TaxableAmount}}</td>
+                                    <td>{{ElevyAmount}}</td>
+                                    <td>{{ReceiverAccountNumber}}</td>
+                                    <td> {{SenderAccountNumber}}</td>
+                                    <td>{{SenderPhoneNumber}}</td>
+                                    <td>{{ChannelReference}}</td>
+                                    <td>{{TransFT}}</td>
+                                    <td>{{#if Status}}
+                                        <span class="badge badge-success">Success</span>
+                                        {{else}}
+                                        <span class="badge badge-danger">Failed</span>
+                                        {{/if}}
+
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll - Vertical, Dynamic Height table end -->
+        <!-- Language - Comma Decimal Place table start -->
+
+    </div>
+</div>

@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<title>CALBANK</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description" content="CAL DASHBOARD" />
+	<meta name="keywords" content="CAL DASHBOARD">
+	<meta name="author" content="AUTOMATION" />
+
+	<!-- Favicon icon -->
+	    <link href="/assets/images/favicon.png" rel="icon" type="image/png" />
+    <!-- fontawesome icon -->
+    <link rel="stylesheet" href="/assets/fonts/fontawesome/css/fontawesome-all.min.css">
+    <!-- animation css -->
+    <link rel="stylesheet" href="/assets/plugins/animation/css/animate.min.css">
+    <!-- vendor css -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/layouts/layout-horizontal.css">
+     <link rel="stylesheet" href="/assets/css/custom.css" type="text/css">
+
+      <!-- data tables css -->
+    <link rel="stylesheet" href="/assets/plugins/data-tables/css/datatables.min.css">
+
+</head>
+
+<body>
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <!-- [ Pre-loader ] End -->
+
+{{>elevyheader}}
+
+
+
+  
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper container">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                        {{{body}}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+    <!-- Warning Section start -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 11]>
+        <div class="ie-warning">
+            <h1>Warning!!</h1>
+            <p>You are using an outdated version of Internet Explorer, please upgrade
+               <br/>to any of the following web browsers to access this website.
+            </p>
+            <div class="iew-container">
+                <ul class="iew-download">
+                    <li>
+                        <a href="http://www.google.com/chrome/">
+                            <img src="/assets/images/browser/chrome.svg" alt="Chrome">
+                            <div>Chrome</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.mozilla.org/en-US/firefox/new/">
+                            <img src="/assets/images/browser/firefox.svg" alt="Firefox">
+                            <div>Firefox</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.opera.com">
+                            <img src="/assets/images/browser/opera.svg" alt="Opera">
+                            <div>Opera</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.apple.com/safari/">
+                            <img src="/assets/images/browser/safari.svg" alt="Safari">
+                            <div>Safari</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="/assets/images/browser/ie.svg" alt="">
+                            <div>IE (11 & above)</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Sorry for the inconvenience!</p>
+        </div>
+    <![endif]-->
+    <!-- Warning Section Ends -->
+
+    <!-- Required Js -->
+    <script src="/assets/js/vendor-all.min.js"></script>
+    <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/pcoded.min.js"></script>
+
+    <!-- tinymce editor -->
+    <script src="/assets/plugins/tinymce/tinymce.min.js"></script>
+
+    <!-- am chart js -->
+    {{!-- <script src="/assets/plugins/chart-am4/js/core.js"></script>
+    <script src="/assets/plugins/chart-am4/js/charts.js"></script>
+    <script src="/assets/plugins/chart-am4/js/animated.js"></script>
+    <script src="/assets/plugins/chart-am4/js/maps.js"></script>
+    <script src="/assets/plugins/chart-am4/js/worldLow.js"></script>
+    <script src="/assets/plugins/chart-am4/js/continentsLow.js"></script>
+
+    <!-- dashboard-custom js -->
+    <script src="/assets/js/pages/ticksy-dashboard-help.js"></script> --}}
+
+    <script src="/assets/js/horizontal-menu.js"></script>
+    <script src="/assets/js/analytics.js"></script>
+    <script src="/assets/plugins/data-tables/js/datatables.min.js"></script>
+    <script src="/assets/js/pages/data-basic-custom.js"></script>
+    <script src="/assets/js/pages/data-export-custom.js"></script>
+    <script src="/assets/apps/tbills/excel.js"></script>
+        <script type="text/javascript">
+    
+let button = document.querySelector("#button-excel");
+
+button.addEventListener("click", e => {
+  let table = document.querySelector("#lang-dt");
+  TableToExcel.convert(table);
+});
+    </script>
+    
+    {{!-- <script src="/assets/apps/tbills/tableSelection.js"></script>
+    <script src="/assets/apps/tbills/selectadvice.js"></script> --}}
+
+    <script type="text/javascript">
+        (function() {
+            if ($('#layout-sidenav').hasClass('sidenav-horizontal') || window.layoutHelpers.isSmallScreen()) {
+                return;
+            }
+            try {
+                window.layoutHelpers.setCollapsed(
+                    localStorage.getItem('layoutCollapsed') === 'true',
+                    false
+                );
+            } catch (e) {}
+        })();
+
+        $(function() {
+            $('#layout-sidenav').each(function() {
+                new SideNav(this, {
+                    orientation: $(this).hasClass('sidenav-horizontal') ? 'horizontal' : 'vertical'
+                });
+            });
+
+            $('body').on('click', '.layout-sidenav-toggle', function(e) {
+                e.preventDefault();
+                window.layoutHelpers.toggleCollapsed();
+                if (!window.layoutHelpers.isSmallScreen()) {
+                    try {
+                        localStorage.setItem('layoutCollapsed', String(window.layoutHelpers.isCollapsed()));
+                    } catch (e) {}
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            $("#pcoded").pcodedmenu({
+                themelayout: 'horizontal',
+                MenuTrigger: 'hover',
+                SubMenuTrigger: 'hover',
+            });
+        });
+
+        $(window).on('load', function() {
+            tinymce.init({
+                selector: '#tinymce-editor',
+                height: 200,
+                theme: 'modern',
+                plugins: [
+                    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                    'searchreplace wordcount visualblocks visualchars code fullscreen',
+                    'insertdatetime media nonbreaking save table contextmenu directionality',
+                    'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc'
+                ],
+                toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+                toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',
+                image_advtab: true
+            });
+        });
+    </script>
+
+
+
+</body>
+
+
+</html>
